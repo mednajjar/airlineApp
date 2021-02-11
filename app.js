@@ -1,11 +1,16 @@
 const express = require('express');
 const app = express();
-app.use(express.json());
 
-
+// -----EJS--------------
+app.set('views', './views');
+app.set('view engine', 'ejs');
 
 app.get('/',(req, res)=>{
-    res.send('Hello World')
+    res.render('index')
+})
+
+app.get('/cart',(req, res)=>{
+    res.render('cart')
 })
 
 
