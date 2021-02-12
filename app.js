@@ -1,20 +1,20 @@
 const express = require('express');
 const app = express();
+const route = require('./routes/pagesRout');
+const expressLayouts = require('express-ejs-layouts');
+
+app.use(express.static('public'));
+app.use('/css', express.static(__dirname + '/css'));
+app.use('/js', express.static(__dirname + '/js'));
+app.use('/img', express.static(__dirname + '/img'));
 
 // -----EJS--------------
-app.set('views', './views');
+app.use(expressLayouts);
+app.set('layout', './layouts/layout');
 app.set('view engine', 'ejs');
 
-app.get('/',(req, res)=>{
-    res.render('index')
-})
 
-app.get('/cart',(req, res)=>{
-    res.render('cart')
-})
-
-
-
+app.use('/', route);
 
 
 

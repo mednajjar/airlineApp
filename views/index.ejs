@@ -1,1 +1,46 @@
-<h1>Hello Ejs</h1>
+<div class="image" style="width:100%; height: 100vh;">
+    <h1 class="text-white text-center title">Hello!
+        Where do you want to explore?</h1>
+    <div class="p-3 mx-auto myCart" id="app">
+        <form class="check">
+            <div class="d-flex justify-content-around flex-wrap text-white">
+                <div class="form-group col-md-4">
+                    <label for="depart">Departure</label>
+                    <select id="depart" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>...</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="ariver">Arrival</label>
+                    <select id="ariver" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>...</option>
+                    </select>
+                </div>
+            </div>
+            <div class="d-flex justify-content-around flex-wrap text-white">
+                <div class="form-group col-md-4">
+                    <label for="place">Passengers</label>
+                    <select id="place" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                    </select>
+                </div>
+                <div class="dates form-group col-md-4 ">
+                    <label for="datepicker">Departure Date</label>
+                    <input type="text" class="form-control" id="datepicker" name="date" placeholder="MM-DD-YYYY">
+                </div>
+            </div>
+            <div class="col-4 text-center mx-auto mt-5">
+                <a type="submit" class="btn btn-primary" style="width: 100%;" href="/book" onclick="checkDate()">Check</a>
+            </div>
+        </form>
+    </div>
+    <script src="../js/check.js"></script>
